@@ -14,23 +14,8 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
+package io.github.komega.clockofclocks.shared.theme
 
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+import androidx.compose.material3.Typography
 
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")
+val CocTypography = Typography()

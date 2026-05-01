@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+package io.github.komega.clockofclocks
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import io.github.komega.clockofclocks.shared.component.App
+
+class CocActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
+        super.onCreate(savedInstanceState)
+        setContent {
+            App()
+        }
     }
 }
-
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")

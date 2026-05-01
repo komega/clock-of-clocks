@@ -39,8 +39,8 @@ jobs:
 
       - name: Decode keystore
         run: |
-          printf "%s" "${{ secrets.KEYSTORE }}" | base64 -d > app/clock-of-clocks.jks
-          printf "%s" "${{ secrets.KEYSTORE_PROPERTIES }}" | base64 -d > app/keystore.properties
+          printf "%s" "${{ secrets.KEYSTORE }}" | base64 -d > app/android/clock-of-clocks.jks
+          printf "%s" "${{ secrets.KEYSTORE_PROPERTIES }}" | base64 -d > app/android/keystore.properties
 
       - name: Build apk
         run: |
@@ -50,7 +50,7 @@ jobs:
       - name: Create release
         run: >
           gh release create ${{ github.ref_name }}
-          app/build/outputs/apk/release/app-release.apk
+          app/android/build/outputs/apk/release/app-release.apk
           --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

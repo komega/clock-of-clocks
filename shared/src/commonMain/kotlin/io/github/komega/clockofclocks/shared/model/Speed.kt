@@ -14,23 +14,15 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+package io.github.komega.clockofclocks.shared.model
+
+import kotlin.jvm.JvmInline
+
+@JvmInline
+value class Speed private constructor(val duration: Int) {
+    companion object {
+        val Fast = Speed(750)
+        val Normal = Speed(1500)
+        val Slow = Speed(3000)
     }
 }
-
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")

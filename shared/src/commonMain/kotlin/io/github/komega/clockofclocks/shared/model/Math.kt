@@ -14,23 +14,19 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+package io.github.komega.clockofclocks.shared.model
+
+import kotlin.math.PI
+
+object Math {
+    private const val RADIANS_PER_HOUR = (2.0 * PI) / 12.0
+    private const val RADIANS_PER_MINUTE = (2.0 * PI) / 60.0
+
+    fun hourToRadians(hour: Int): Float {
+        return (RADIANS_PER_HOUR * hour).toFloat()
+    }
+
+    fun minuteToRadians(minute: Int): Float {
+        return (RADIANS_PER_MINUTE * minute).toFloat()
     }
 }
-
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")

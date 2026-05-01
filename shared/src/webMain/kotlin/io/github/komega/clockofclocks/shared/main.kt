@@ -14,23 +14,15 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+package io.github.komega.clockofclocks.shared
+
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.window.ComposeViewport
+import io.github.komega.clockofclocks.shared.component.App
+
+@OptIn(ExperimentalComposeUiApi::class)
+fun main() {
+    ComposeViewport {
+        App()
     }
 }
-
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")

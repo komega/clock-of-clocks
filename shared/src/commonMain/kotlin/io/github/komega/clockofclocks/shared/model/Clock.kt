@@ -14,23 +14,19 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
+package io.github.komega.clockofclocks.shared.model
 
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+import kotlin.jvm.JvmInline
 
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")
+@Suppress("NOTHING_TO_INLINE")
+inline fun Clock(hour: Int, minute: Int) =
+    Clock((hour shl 16) or (minute and 0xFFFF))
+
+@JvmInline
+value class Clock(val packed: Int) {
+    inline val hour: Int
+        get() = packed shr 16
+
+    inline val minute: Int
+        get() = packed and 0xFFFF
+}
