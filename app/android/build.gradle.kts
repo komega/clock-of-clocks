@@ -32,21 +32,23 @@ android {
         applicationId = "io.github.komega.clockofclocks"
         minSdk = 31
         targetSdk = 37
-        versionCode = 20260428
-        versionName = "2026.04.28"
+        versionCode = 20260501
+        versionName = "2026.05.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        create("release") {
-            val keystore = file("keystore.properties")
-            val properties = Properties()
-            FileInputStream(keystore).use(properties::load)
-            storeFile = file(properties["storeFile"] as String)
-            storePassword = properties["storePassword"] as String
-            keyAlias = properties["keyAlias"] as String
-            keyPassword = properties["keyPassword"] as String
+    val keystore = file("keystore.properties")
+    if (keystore.exists()) {
+        signingConfigs {
+            create("release") {
+                val properties = Properties()
+                FileInputStream(keystore).use(properties::load)
+                storeFile = file(properties["storeFile"] as String)
+                storePassword = properties["storePassword"] as String
+                keyAlias = properties["keyAlias"] as String
+                keyPassword = properties["keyPassword"] as String
+            }
         }
     }
 
