@@ -1,18 +1,14 @@
-name: Deploy to Github Page
-run-name: Deploy to Github Page
+name: Deploy
+run-name: Deploy ${{ github.ref_name }}
 
 on:
   push:
     tags:
       - 'v*'
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
+    name: Build distribution
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -34,7 +30,7 @@ jobs:
         with:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
 
-      - name: Build browser distribution
+      - name: Build distribution
         run: |
           chmod +x gradlew
           ./gradlew composeCompatibilityBrowserDistribution
@@ -42,15 +38,19 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./shared/build/dist/composeWebCompatibility/productionExecutable
+          path: shared/build/dist/composeWebCompatibility/productionExecutable
 
   deploy:
+    name: Deploy github page
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
+      - name: Deploy page
         id: deployment
         uses: actions/deploy-pages@v5
