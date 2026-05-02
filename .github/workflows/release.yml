@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: clock-of-clocks
+          name: desktop-${{ matrix.os }}
           path: shared/build/compose/binaries/main-release/**/*
 
   build-android:
@@ -86,7 +86,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: clock-of-clocks
+          name: android
           path: app/android/build/outputs/**/release/*.{apk,aab}
 
   create-release:
@@ -108,7 +108,7 @@ jobs:
       - name: Create release
         run: >
           gh release create ${{ github.ref_name }}
-          artifacts/*
+          artifacts/*.*
           --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
