@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
@@ -59,15 +60,49 @@ kotlin {
         binaries.executable()
     }
 
+    jvm()
+
     sourceSets {
         commonMain.dependencies {
             implementation(libs.compose.material3)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.kotlinx.datetime)
         }
+        jvmMain.dependencies {
+            implementation(compose.desktop.currentOs)
+        }
     }
 }
 
 dependencies {
     androidRuntimeClasspath(libs.compose.ui.tooling)
+}
+
+compose.desktop {
+    application {
+        mainClass = "io.github.komega.clockofclocks.MainKt"
+
+        nativeDistributions {
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            packageName = "io.github.komega.clockofclocks"
+            packageVersion = "1.0.0"
+            copyright = "© 2026 Khoa Omega"
+
+            windows {
+                menu = true
+                shortcut = true
+                dirChooser = true
+                upgradeUuid = "77678903-8903-4776-8903-776789034776"
+            }
+
+            macOS {
+                bundleID = "io.github.komega.clockofclocks"
+                dockName = "Clock Of Clocks"
+            }
+
+            linux {
+                shortcut = true
+            }
+        }
+    }
 }

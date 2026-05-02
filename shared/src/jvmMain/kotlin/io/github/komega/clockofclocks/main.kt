@@ -14,27 +14,17 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+package io.github.komega.clockofclocks
+
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.application
+import io.github.komega.clockofclocks.shared.component.App
+
+fun main() = application {
+    Window(
+        onCloseRequest = ::exitApplication,
+        title = "Clock of Clocks",
+    ) {
+        App()
     }
 }
-
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
-
-dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "clock-of-clocks"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
-include(":shared")
