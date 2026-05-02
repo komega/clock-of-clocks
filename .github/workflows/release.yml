@@ -7,18 +7,67 @@ on:
       - 'v*'
 
 jobs:
-  release:
-    name: Release
-    runs-on: ubuntu-latest
+  build-desktop:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            task: packageReleaseMsi
+            artifact-path: shared/build/compose/binaries/main-release/msi/*.msi
+          - os: macos-latest
+            task: packageReleaseDmg
+            artifact-path: shared/build/compose/binaries/main-release/dmg/*.dmg
+          - os: ubuntu-latest
+            task: packageReleaseDeb
+            artifact-path: shared/build/compose/binaries/main-release/deb/*.deb
 
-    permissions:
-      contents: write
-
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
 
       - name: Copy gradle.properties
+        shell: bash
+        run: |
+          mkdir -p ~/.gradle
+          cp .github/gradle.properties ~/.gradle/gradle.properties
+
+      - name: Setup java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+
+      - name: Setup android
+        uses: android-actions/setup-android@v4
+
+      - name: Grant execute permission for gradlew
+        if: runner.os != 'Windows'
+        run: chmod +x gradlew
+
+      - name: Build desktop package
+        run: ./gradlew ${{ matrix.task }}
+
+      - name: Upload desktop artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: desktop-${{ matrix.os }}
+          path: ${{ matrix.artifact-path }}
+
+  build-android:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Copy gradle.properties
+        shell: bash
         run: |
           mkdir -p ~/.gradle
           cp .github/gradle.properties ~/.gradle/gradle.properties
@@ -47,10 +96,30 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease
 
+      - name: Upload android artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-release
+          path: app/android/build/outputs/apk/release/*.apk
+
+  create-release:
+    needs: [build-desktop, build-android]
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+          merge-multiple: true
+
       - name: Create release
         run: >
           gh release create ${{ github.ref_name }}
-          app/android/build/outputs/apk/release/android-release.apk
+          artifacts/*.{apk,dmg,msi,deb}
           --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
