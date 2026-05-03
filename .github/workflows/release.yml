@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: desktop-${{ matrix.os }}
-          path: shared/build/compose/binaries/main-release/{deb,dmg,msi}/*.{deb,dmg,msi}
+          path: "shared/build/compose/binaries/main-release/{deb,dmg,msi}/*.{deb,dmg,msi}"
 
   build-android:
     name: Build android
@@ -85,7 +85,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: android
-          path: android/build/outputs/{apk,bundle}/release/*.{aab,apk}
+          path: "android/build/outputs/{apk,bundle}/release/*.{aab,apk}"
 
   create-release:
     name: Create github release
