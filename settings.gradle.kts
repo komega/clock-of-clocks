@@ -36,5 +36,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "clock-of-clocks"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app:android")
+include(":android")
 include(":shared")

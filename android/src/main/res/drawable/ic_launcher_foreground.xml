@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2025 Khoa Omega
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +16,10 @@
 
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="108dp"
     android:height="108dp"
+    android:viewportHeight="48"
     android:viewportWidth="48"
-    android:viewportHeight="48">
+    android:width="108dp">
     <group
         android:scaleX="0.73333335"
         android:scaleY="0.73333335"
@@ -78,21 +77,21 @@
         <path
             android:fillColor="#00000000"
             android:pathData="M24,24L24,36"
-            android:strokeWidth="1.5"
             android:strokeColor="#d83b01"
-            android:strokeLineCap="round" />
+            android:strokeLineCap="round"
+            android:strokeWidth="1.5" />
         <path
             android:fillColor="#00000000"
             android:pathData="M24,24L32.485,15.515"
-            android:strokeWidth="1.5"
             android:strokeColor="#45494d"
-            android:strokeLineCap="round" />
+            android:strokeLineCap="round"
+            android:strokeWidth="1.5" />
         <path
             android:fillColor="#00000000"
             android:pathData="M24,24L16.213,20.265"
-            android:strokeWidth="2.5"
             android:strokeColor="#45494d"
-            android:strokeLineCap="round" />
+            android:strokeLineCap="round"
+            android:strokeWidth="2.5" />
         <path
             android:fillColor="#1e2021"
             android:pathData="M24,24m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />

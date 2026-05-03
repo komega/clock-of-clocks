@@ -23,7 +23,7 @@ import io.github.komega.clockofclocks.shared.component.App
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
-        title = "Clock of Clocks",
+        title = "Clock of Clocks"
     ) {
         App()
     }

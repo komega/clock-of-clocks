@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		1A79497C2FA483C100E6586C /* ClockOfClocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockOfClocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AED2EC22FA73EF900DC22A4 /* ClockOfClocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockOfClocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1A79499E2FA48C1700E6586C /* Exceptions for "ClockOfClocks" folder in "ClockOfClocks" target */ = {
+		1AED2ED12FA73F8900DC22A4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 1A79497B2FA483C100E6586C /* ClockOfClocks */;
+			target = 1AED2EC12FA73EF900DC22A4 /* ClockOfClocks */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1A79497E2FA483C100E6586C /* ClockOfClocks */ = {
+		1AED2EC42FA73EF900DC22A4 /* ClockOfClocks */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1A79499E2FA48C1700E6586C /* Exceptions for "ClockOfClocks" folder in "ClockOfClocks" target */,
+				1AED2ED12FA73F8900DC22A4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
 			);
 			path = ClockOfClocks;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1A7949792FA483C100E6586C /* Frameworks */ = {
+		1AED2EBF2FA73EF900DC22A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A7949732FA483C100E6586C = {
+		1AED2EB92FA73EF900DC22A4 = {
 			isa = PBXGroup;
 			children = (
-				1A79497E2FA483C100E6586C /* ClockOfClocks */,
-				1A79497D2FA483C100E6586C /* Products */,
+				1AED2EC42FA73EF900DC22A4 /* ClockOfClocks */,
+				1AED2EC32FA73EF900DC22A4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1A79497D2FA483C100E6586C /* Products */ = {
+		1AED2EC32FA73EF900DC22A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A79497C2FA483C100E6586C /* ClockOfClocks.app */,
+				1AED2EC22FA73EF900DC22A4 /* ClockOfClocks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,65 +61,65 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A79497B2FA483C100E6586C /* ClockOfClocks */ = {
+		1AED2EC12FA73EF900DC22A4 /* ClockOfClocks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A7949872FA483C200E6586C /* Build configuration list for PBXNativeTarget "ClockOfClocks" */;
+			buildConfigurationList = 1AED2ECD2FA73EFA00DC22A4 /* Build configuration list for PBXNativeTarget "ClockOfClocks" */;
 			buildPhases = (
-				1A7949902FA4875600E6586C /* ShellScript */,
-				1A7949782FA483C100E6586C /* Sources */,
-				1A7949792FA483C100E6586C /* Frameworks */,
-				1A79497A2FA483C100E6586C /* Resources */,
+				1AED2ED22FA73FBB00DC22A4 /* Compile Kotlin Framework */,
+				1AED2EBE2FA73EF900DC22A4 /* Sources */,
+				1AED2EBF2FA73EF900DC22A4 /* Frameworks */,
+				1AED2EC02FA73EF900DC22A4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				1A79497E2FA483C100E6586C /* ClockOfClocks */,
+				1AED2EC42FA73EF900DC22A4 /* ClockOfClocks */,
 			);
 			name = ClockOfClocks;
 			packageProductDependencies = (
 			);
 			productName = ClockOfClocks;
-			productReference = 1A79497C2FA483C100E6586C /* ClockOfClocks.app */;
+			productReference = 1AED2EC22FA73EF900DC22A4 /* ClockOfClocks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1A7949742FA483C100E6586C /* Project object */ = {
+		1AED2EBA2FA73EF900DC22A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					1A79497B2FA483C100E6586C = {
+					1AED2EC12FA73EF900DC22A4 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = 1A7949772FA483C100E6586C /* Build configuration list for PBXProject "ClockOfClocks" */;
+			buildConfigurationList = 1AED2EBD2FA73EF900DC22A4 /* Build configuration list for PBXProject "ClockOfClocks" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 1A7949732FA483C100E6586C;
+			mainGroup = 1AED2EB92FA73EF900DC22A4;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 1A79497D2FA483C100E6586C /* Products */;
+			productRefGroup = 1AED2EC32FA73EF900DC22A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A79497B2FA483C100E6586C /* ClockOfClocks */,
+				1AED2EC12FA73EF900DC22A4 /* ClockOfClocks */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1A79497A2FA483C100E6586C /* Resources */ = {
+		1AED2EC02FA73EF900DC22A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,7 +129,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1A7949902FA4875600E6586C /* ShellScript */ = {
+		1AED2ED22FA73FBB00DC22A4 /* Compile Kotlin Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -139,18 +139,19 @@
 			);
 			inputPaths = (
 			);
+			name = "Compile Kotlin Framework";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\n# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\n# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1A7949782FA483C100E6586C /* Sources */ = {
+		1AED2EBE2FA73EF900DC22A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -160,7 +161,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1A7949852FA483C200E6586C /* Debug */ = {
+		1AED2ECB2FA73EFA00DC22A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		1A7949862FA483C200E6586C /* Release */ = {
+		1AED2ECC2FA73EFA00DC22A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,7 +280,7 @@
 			};
 			name = Release;
 		};
-		1A7949882FA483C200E6586C /* Debug */ = {
+		1AED2ECE2FA73EFA00DC22A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -312,7 +313,7 @@
 			};
 			name = Debug;
 		};
-		1A7949892FA483C200E6586C /* Release */ = {
+		1AED2ECF2FA73EFA00DC22A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -347,25 +348,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A7949772FA483C100E6586C /* Build configuration list for PBXProject "ClockOfClocks" */ = {
+		1AED2EBD2FA73EF900DC22A4 /* Build configuration list for PBXProject "ClockOfClocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A7949852FA483C200E6586C /* Debug */,
-				1A7949862FA483C200E6586C /* Release */,
+				1AED2ECB2FA73EFA00DC22A4 /* Debug */,
+				1AED2ECC2FA73EFA00DC22A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A7949872FA483C200E6586C /* Build configuration list for PBXNativeTarget "ClockOfClocks" */ = {
+		1AED2ECD2FA73EFA00DC22A4 /* Build configuration list for PBXNativeTarget "ClockOfClocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A7949882FA483C200E6586C /* Debug */,
-				1A7949892FA483C200E6586C /* Release */,
+				1AED2ECE2FA73EFA00DC22A4 /* Debug */,
+				1AED2ECF2FA73EFA00DC22A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1A7949742FA483C100E6586C /* Project object */;
+	rootObject = 1AED2EBA2FA73EF900DC22A4 /* Project object */;
 }

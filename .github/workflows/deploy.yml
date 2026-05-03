@@ -4,7 +4,7 @@ run-name: Deploy ${{ github.ref_name }}
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   build:
@@ -22,8 +22,8 @@ jobs:
       - name: Setup java
         uses: actions/setup-java@v5
         with:
-          distribution: 'temurin'
-          java-version: '21'
+          distribution: "temurin"
+          java-version: "21"
 
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v6

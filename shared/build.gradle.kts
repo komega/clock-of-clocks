@@ -18,10 +18,10 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-    alias(libs.plugins.kotlin.multiplatform)
-    alias(libs.plugins.android.kotlin.multiplatform.library)
-    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.android.multiplatform)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.kotlin.multiplatform)
 }
 
 kotlin {
@@ -64,6 +64,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.compose.ui)
             implementation(libs.compose.material3)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.kotlinx.datetime)
@@ -91,7 +92,7 @@ compose.desktop {
                 TargetFormat.Pkg,
                 TargetFormat.Rpm
             )
-            packageName = "io.github.komega.clockofclocks"
+            packageName = "Clock Of Clocks"
             packageVersion = "1.0.0"
             copyright = "© 2026 Khoa Omega"
 
@@ -100,15 +101,18 @@ compose.desktop {
                 shortcut = true
                 dirChooser = true
                 upgradeUuid = "77678903-8903-4776-8903-776789034776"
+                iconFile = file("src/jvmMain/resources/clock.ico")
             }
 
             macOS {
                 bundleID = "io.github.komega.clockofclocks"
                 dockName = "Clock Of Clocks"
+                iconFile = file("src/jvmMain/resources/clock.icns")
             }
 
             linux {
                 shortcut = true
+                iconFile = file("src/jvmMain/resources/clock.png")
             }
         }
     }
