@@ -84,14 +84,7 @@ compose.desktop {
         mainClass = "io.github.komega.clockofclocks.MainKt"
 
         nativeDistributions {
-            targetFormats(
-                TargetFormat.Deb,
-                TargetFormat.Dmg,
-                TargetFormat.Exe,
-                TargetFormat.Msi,
-                TargetFormat.Pkg,
-                TargetFormat.Rpm
-            )
+            targetFormats(TargetFormat.Deb, TargetFormat.Dmg, TargetFormat.Msi)
             packageName = "Clock Of Clocks"
             packageVersion = "1.0.0"
             copyright = "© 2026 Khoa Omega"
