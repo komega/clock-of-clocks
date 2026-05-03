@@ -45,7 +45,10 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: desktop-${{ matrix.os }}
-          path: "shared/build/compose/binaries/main-release/{deb,dmg,msi}/*.{deb,dmg,msi}"
+          path: |
+            shared/build/compose/binaries/main-release/deb/*.deb
+            shared/build/compose/binaries/main-release/dmg/*.dmg
+            shared/build/compose/binaries/main-release/msi/*.msi
 
   build-android:
     name: Build android
@@ -85,7 +88,9 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: android
-          path: "android/build/outputs/{apk,bundle}/release/*.{aab,apk}"
+          path: |
+            android/build/outputs/apk/release/*.apk
+            android/build/outputs/bundle/release/*.aab
 
   create-release:
     name: Create github release
@@ -105,9 +110,12 @@ jobs:
           path: artifacts
           merge-multiple: true
 
+      - name: List file
+        run: ls -R
+
       - name: Create release
         run: >
           gh release create ${{ github.ref_name }}
-          artifacts/**/*.{aab,apk,deb,dmg,exe,msi,pkg,rpm} --generate-notes
+          artifacts/**/*.{aab,apk,deb,dmg,msi} --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
