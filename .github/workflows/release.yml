@@ -110,12 +110,9 @@ jobs:
           path: artifacts
           merge-multiple: true
 
-      - name: List file
-        run: ls -R
-
       - name: Create release
         run: >
           gh release create ${{ github.ref_name }}
-          artifacts/**/*.{aab,apk,deb,dmg,msi} --generate-notes
+          artifacts/**/* --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
