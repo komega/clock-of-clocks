@@ -1,6 +1,7 @@
 [versions]
 agp = "9.2.0"
 androidx-activity-compose = "1.13.0"
+compose-material3 = "1.9.0"
 compose-multiplatform = "1.10.3"
 kotlin = "2.3.21"
 kotlinx-datetime = "0.7.1"
@@ -8,7 +9,7 @@ spotless = "8.4.0"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
-compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-multiplatform" }
+compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-material3" }
 compose-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "compose-multiplatform" }
 compose-ui-tooling = { group = "org.jetbrains.compose.ui", name = "ui-tooling", version.ref = "compose-multiplatform" }
 compose-ui-tooling-preview = { group = "org.jetbrains.compose.ui", name = "ui-tooling-preview", version.ref = "compose-multiplatform" }
