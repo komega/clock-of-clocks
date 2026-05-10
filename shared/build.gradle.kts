@@ -81,7 +81,7 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "io.github.komega.clockofclocks.MainKt"
+        mainClass = "io.github.komega.clockofclocks.shared.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Deb, TargetFormat.Dmg, TargetFormat.Msi)

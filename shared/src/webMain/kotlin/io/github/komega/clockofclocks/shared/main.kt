@@ -19,10 +19,22 @@ package io.github.komega.clockofclocks.shared
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport
 import io.github.komega.clockofclocks.shared.component.App
+import kotlin.js.ExperimentalWasmJsInterop
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
+    registerCacheWorker()
     ComposeViewport {
         App()
     }
 }
+
+@OptIn(ExperimentalWasmJsInterop::class)
+@JsFun("""
+    () => {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('cache-worker.js');
+        }
+    }
+""")
+external fun registerCacheWorker()

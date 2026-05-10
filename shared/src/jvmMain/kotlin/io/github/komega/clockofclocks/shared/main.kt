@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.komega.clockofclocks
+package io.github.komega.clockofclocks.shared
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
