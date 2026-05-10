@@ -1,13 +1,13 @@
 const CACHE_NAME = 'clock-of-clocks-v1';
 const ASSETS_TO_CACHE = [
     '/',
-    '/index.html',
-    '/styles.css',
-    '/shared.js',
-    '/images/clock-16.png',
-    '/images/clock-32.png',
-    '/images/clock-96.png',
-    '/images/clock-120.png'
+    'index.html',
+    'styles.css',
+    'shared.js',
+    'images/clock-16.png',
+    'images/clock-32.png',
+    'images/clock-96.png',
+    'images/clock-120.png'
 ];
 
 self.addEventListener('install', event => {
@@ -15,6 +15,9 @@ self.addEventListener('install', event => {
         caches
             .open(CACHE_NAME)
             .then(cache => cache.addAll(ASSETS_TO_CACHE))
+            .catch((error) => {
+                console.error("Cache failed:", error);
+            })
     );
     self.skipWaiting();
 });
